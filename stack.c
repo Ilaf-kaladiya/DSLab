@@ -57,7 +57,17 @@ int main(){
 		printf("enter choice");
 		scanf("%d",&choice);
 		switch(choice){
-		}
+			case 1:peek;
+				break;
+			case 2:push;
+				break;
+			case 3:pop;
+				break;
+			default;
+				printf("invalid choice");
+		}while(1);
+		return 0;
+	}
 		
 
 
