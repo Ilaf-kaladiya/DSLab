@@ -58,9 +58,20 @@ if(in[i]==')')
 		opr=pop();
 	}
 }
-while(s.top!=-1)
-post[j++]=pop();
+while(s1.top!=-1)
+post[j++]=pop(&s1);
 post[j]='\0';
 }
 }
+intpriority(char c)
+{
+	if(c=='$')
+	return 3;
+	if(c=='*'||c=='/')
+	return 2;
+	if(c=='+'||c=='-')
+	return 1;
+	else return 0;
+}
+
 		
