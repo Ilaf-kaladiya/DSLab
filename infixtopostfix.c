@@ -14,11 +14,11 @@ int priority(char);
 
 int main()
 {
-	char infix{30],postfix[30];
-		printf("\nenter infix expression\n");
+	char infix[30],postfix[30];
+		printf("\nEnter INFIX Expression\n");
 		scanf("%s",infix);
 		convert(infix,postfix);
-		printf("\n\npostfixexpression\n%s",postfix);
+		printf("\n\nPostfix Expression\n%s",postfix);
 		return 0;
 }
 void convert(char in[],charpost[])
@@ -30,7 +30,7 @@ void convert(char in[],charpost[])
 	for(i=0;in[i]!='\0';i++)
 	{
 		if(isalpha(in[i]))
-		post[j++]=in[i];
+			post[j++]=in[i];
 		if(in[i]=='(')
 		push(&s1,in[i]);
 		if(in[i]=='+'||in[i]=='-'||in[i]=='/'||in[i]=='*')	
