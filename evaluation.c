@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
-typedef struct conversion
+#define MAX 100
+
+typedef struct stack
 {
-	int a[30];
+	int a[MAX];
 	int top;
 } stack;
 
-void push(stack*s,int e);
+void push(struct stack *ps,char n);
 
-int pop (stack*s);
+int pop (struct stack *ps);
 
 int evaluate(char postfix[]);
 
@@ -17,27 +19,29 @@ int operation (int num1,int num2,char opr);
 int main()
 {
 	char postfix[30];
-		printf("\nenter postfix expression\n");
-		scanf("%s",postfix);
-		printf("\n\nevaluation of postfixexpression=%d\n",evaluate(postfix));
-		return 0;
+	int result;
+	printf("\nEnter Postfix Expression\n");
+	scanf("%s",postfix);
+	printf("\n\nEvaluation of Postfix Expression=%d\n",evaluate(postfix));
+	return 0;
 }
 
 
 int operation (int num1,int num2,char opr)
 {
+	
 	switch(opr)
 	{
-		case:  '+';
+		case  '+':
 		return num1+num2;
 		break;
-		case:'-';
+		case '-':
 		return num1-num2;
 		break;
-		case:'*';
+		case '*':
 		return num1*num2;
 		break;
-		case:'/';
+		case '/':
 		return num1/num2;
 		break;
 	}
@@ -46,36 +50,46 @@ int operation (int num1,int num2,char opr)
 
 int evaluate(char postfix[30])
 {
+	
 	int n1,n2,res,i;
 	stack s;
-	for(i=0;postfix[i]!='0';i++)
+	s.top=-1;
+	for(i=0;postfix[i]!='\0';i++)
 	{
-	if((isdigit(postfix[i]))
+		if((isdigit(postfix[i]))
 	{
-		 push(postfix[i]-'0',&s);
-	 }
+		push(postfix[i]-'0',&s);
+		printf("\n%c-%c",postfix[i]-'0',postfix[i]);
+	 
+	
+	}
 	 else
-   {
-	 n1=pop(&s);
+   	{
 	 n2=pop(&s);
+	 n1=pop(&s);
 	 result=operation(n1,n2,postfix[i]);
 	 push(result,&s);
-    }
+    	}
+	}
 
 return pop(&s);
 	}
-}
 
-void push(int e,stack *s)
+
+void push(char n,struct stack *ps)
 {
-	int top=s->top;
-	if(top<29)
+	
+	if(ps->top!= MAX-1)
 	{
-		s->a[++(s->top)]=e;
+		ps->a[++(ps->top)]=n;
+	}
+	else 
+	{ 
+		printf("\nStack is FULL\n");
 	}
 }
 
-int pop(stack *s)
+int pop(struct stack *s)
 {
 	int d,top=s->top;
 	if(top!=-1)
