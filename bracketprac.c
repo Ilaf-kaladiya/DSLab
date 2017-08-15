@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <ctype.h
+#include <ctype.h>
 #deefine MAX 100
 
 typedef struct stack
