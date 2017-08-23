@@ -31,7 +31,7 @@ void push(int e){
 	if(isFull()!=1)
 	{
 		e=stack[++top];//increment the top and set top of stack equal to e
-	printf("\nYour element %d successfully inserted\n",e);//message about successful insertion of stack
+	printf("\nYour element %d successfully inserted\n",e);//message as 'element successfully inserted
 	}
 	else 
 	{
@@ -47,8 +47,8 @@ void pop()
 	int d;
 	if (isEmpty()!=1)
 	{
-		d=stack[--top];//decrement the top and set top of stack equal to d
-		printf("\nYour elements %d sucessfully deleted\n",d);//message about successful deletion of stack
+		d=stack[top--];//set top of stack equal to d and decrement the top 
+		printf("\nYour elements %d sucessfully deleted\n",d);//message about successful deletion of element from stack
 	}
 	else
 	{
@@ -67,21 +67,21 @@ int main()
 		scanf("%d",&choice);   //take  input in choice variable
 		switch(choice){
 			case 1:
-				e=peek();//peek function called
+				e=peek();//call peek function 
 				printf("\n Element at the top of the stack is :- %d\n",e);
 				break;
 			case 2:
 				printf("\nEnter the element to be inserted :- \n");
 				scanf("%d",&e);
-				push(e);//push function called
+				push(e);//call push function 
 				break;
-			case 3:pop();//pop function called
+			case 3:pop();//call pop function
 				break;
 				
 			case 4:
-				exit(0);//call exit (0) function
+				exit(0);//call exit (0) function or return 0
 			default:
-				printf("\ninvalid choice\n");
+				printf("\nInvalid choice\n");//choice is invalid
 				break;
 		}while(1);
 		return 0;
