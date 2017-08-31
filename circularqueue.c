@@ -7,10 +7,8 @@
 int queue[MAXSIZE], front=-1, rear=-1;
 int isFull(){
 	//return 1 if stack is full else returns -1	
-	if(((abs(front-rear)%(MAXSIZE-1)==1)||(abs(front-rear)%(MAXSIZE-1)==0))&&(front!=-1&&rear!=-1))
-	return 1;
-	else 
-	return 0;
+	
+	return ((rear==MAXsize-1 && front==0)||(rear+1==front));
 
 }
 
@@ -62,6 +60,12 @@ void deleteQueue()
 		printf("element deleted id %d\n",d);
 	}
 	}
+void display(){
+	int i=front;
+	if(!isEmpty()){
+		while(i!=rear){
+			printf
+
 
 
 
