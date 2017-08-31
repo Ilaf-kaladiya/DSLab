@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<std
+#include<stdlib.h>
 #define MAXSIZE 10
 
 int stack[MAXSIZE], top=-1;
@@ -29,42 +29,60 @@ int peek(){
 void push(int e){
 	//inserts an element into stack
 	if(isFull()!=1)
-	{e=stack[++top];
-	printf("element e successfully inserted");}
-	else {
-	printf("stack overflow");
+	{
+		e=stack[++top];//increment the top and set top of stack equal to e
+	printf("\nYour element %d successfully inserted\n",e);//message as 'element successfully inserted
+	}
+	else 
+	{
+		//message stack overflow
+	printf("\nSorry. Your element cannot be inserted. Stack overflow\n");
 }
 
 }
 
-void pop(){
-	//deletes an elementfrom the stack
+void pop()
+{
+	//deletes an element from the top of stack
 	int d;
 	if (isEmpty()!=1)
 	{
-		d=stack[--top];
-		printf("elements d sucessfully deleted");
+		d=stack[top--];//set top of stack equal to d and decrement the top 
+		printf("\nYour elements %d sucessfully deleted\n",d);//message about successful deletion of element from stack
 	}
-	else{
-	printf("stack underflow");
+	else
+	{
+		//message stack uderflow
+	printf("\nSorry. Your element cannot be deleted. stack underflow\n");
 }
 }
-int main(){
+int main()
+{
 	int chioce,e;
 	do 
 	{
-		printf("display menu 1.peek 2.push 3.pop 4.exit");
-		printf("enter choice");
-		scanf("%d",&choice);
+		//display menu 1.peek 2.push 3.pop 4.exit
+		printf("\nDisplay Menu \n1.Peek\n 2.Push\n 3.Pop\n 4.Exit\n");
+		printf("\nEnter your choice");
+		scanf("%d",&choice);   //take  input in choice variable
 		switch(choice){
-			case 1:peek;
+			case 1:
+				e=peek();//call peek function 
+				printf("\n Element at the top of the stack is :- %d\n",e);
 				break;
-			case 2:push;
+			case 2:
+				printf("\nEnter the element to be inserted :- \n");
+				scanf("%d",&e);
+				push(e);//call push function 
 				break;
-			case 3:pop;
+			case 3:pop();//call pop function
 				break;
-			default;
-				printf("invalid choice");
+				
+			case 4:
+				exit(0);//call exit (0) function or return 0
+			default:
+				printf("\nInvalid choice\n");//choice is invalid
+				break;
 		}while(1);
 		return 0;
 	}

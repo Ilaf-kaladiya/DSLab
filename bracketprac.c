@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
-typedef struct conversion
+#deefine MAX 100
+
+typedef struct stack
 {
-	char a[30];
+	char a[MAX];
 	int top;
 }stack;
 
-void push(char, stack *s);
+void push(char,struct stack *s);
 
-char pop (stack *s);
+char pop (struct stack *s);
 
 void checkcontinuity (char exp[30]);
 
@@ -17,27 +19,26 @@ int isMatchingpair (char left, char right);
 
 int main()
 {
-	char exp[30];
-		printf("\nenter an expression containing only brackets\n");
+	char exp[MAX];
+		printf("\nEnter an expression containing only BRACKETS\n");
 		scanf("%s",exp);
 		checkcontinuity(exp);
 		return 0;
 }
 
 
-
-
-
- void push (char e,stack *s)
+ void push (char n,struct stack *s)
 {
-	int top=s->top;
-	if(top<29)
+	
+	if(s->top!=MAX-1)
 	{
-		s->a[++(s->top)]=e;
+		s->a[++(s->top)]=n;
 	}
+	 else
+		 printf("\n Stack is FULL\n");
 }
 
-char pop(stack *s)
+char pop(struct stack *s)
 {
 	char d;
 	int top=s->top;
@@ -53,23 +54,28 @@ int isMatchingpair (char left,char right)
 {
 	switch(left)
 	{
-		case'(':if(right==')')
-		return 1;
-		else
-		return 0;
-		case'{':if(right=='}')
-		return 1;
-		else
-		return 0;
-		case'[':if(right==']')
-		return 1;
-		else
-		return 0;
+		case '(':
+			if(right==')')
+				return 1;
+			else
+				return 0;
+		case'{':	
+			if(right=='}')
+				return 1;
+			else
+				return 0;
+		case'[':
+			if(right==']')
+				return 1;
+			else
+				return 0;
+		default:
+			 	return 0;
 	}
-	return 0;
+	
 }
 
-void checkcontinuity (char exp[30])
+void checkcontinuity (char exp[MAX])
 {
 	int i;
 	char e, left;
@@ -87,9 +93,9 @@ void checkcontinuity (char exp[30])
 		{
 			if(s.top==-1)
 			{
-				printf("expression is invalid\n");
+				printf("Expression is INVALID\n");
 				return;	
-				}
+			}
 				else
 				{
 			left=pop(&s);
@@ -99,7 +105,7 @@ void checkcontinuity (char exp[30])
 			else
 			
 			{
-				printf("invalid expression\n");
+				printf("\n INVALID Expression\n");
 				return;
 			}
 		}
@@ -107,14 +113,14 @@ void checkcontinuity (char exp[30])
 		}
 			
 			
-if(s.top==-1)
+			if(s.top==-1)
 			{
-				printf("expression is invalid\n");
+				printf("\nExpression is INVALID\n");
 				return;
 			}
 				else
 			{
-				printf("valid expression\n");
+				printf("\nVALID Expression\n");
 				
 			}
 }
