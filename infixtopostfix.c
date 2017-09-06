@@ -26,7 +26,7 @@ int main()
 		return 0;
 }
 void convert(char in[],char post[])
-{
+{						//This function is used to convert infix expression to postfix
 	char opr;
 	stack s1;
 	int j=0,i;
@@ -69,7 +69,7 @@ void convert(char in[],char post[])
 }
 	
 int priority(char c)
-{
+{				//This function checks the priority of different symbols
 	if(c=='$')
 		return 3;
 	if(c=='*'||c=='/')
@@ -81,21 +81,25 @@ int priority(char c)
 }
 
 void push(stack *s,char opr)
-{
+{			//inserts an element into stack
 	s->top++;
-	s->a[s->top]=opr;
+	s->a[s->top]=opr;//increment the top and set top of stack equal to opr
 }
 
 char pop(stack *s)
-{
+{		
+
+	//deletes an element from the top of stack
 	if (s->top==-1)
 	{
 		printf("Stack is empty\n");
+
+		//message stack uderflow
 		return 0;
 	}
 	else
 	{
-		char data=s->a[s->top--];
+		char data=s->a[s->top--];//set top of stack equal to d and decrement the top 
 		return data;
 		
 	}
