@@ -1,3 +1,6 @@
+/*Description: Array implementation of a stack
+ * Learner: ILAF KALADIYA
+ */
 #include<stdio.h>
 #include<stdlib.h>
 #define MAXSIZE 10
@@ -31,13 +34,13 @@ void push(int e){
 	if(isFull()!=1)
 	{
 		e=stack[++top];//increment the top and set top of stack equal to e
-	printf("\nYour element %d successfully inserted\n",e);//message as 'element successfully inserted
+	printf("\nYour element %d successfully inserted\n",e);//message as element successfully inserted
 	}
 	else 
 	{
 		//message stack overflow
 	printf("\nSorry. Your element cannot be inserted. Stack overflow\n");
-}
+	}
 
 }
 
@@ -54,7 +57,7 @@ void pop()
 	{
 		//message stack uderflow
 	printf("\nSorry. Your element cannot be deleted. stack underflow\n");
-}
+	}
 }
 int main()
 {
@@ -83,9 +86,9 @@ int main()
 			default:
 				printf("\nInvalid choice\n");//choice is invalid
 				break;
-		}while(1);
+	}while(1);
 		return 0;
-	}
+}
 		
 
 
