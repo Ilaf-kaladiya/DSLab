@@ -1,3 +1,7 @@
+/*Description: Conversion of infix expression to postfix expression
+ * Learner: ILAF KALADIYA
+ * */
+
 #include<stdio.h>
 #include<ctype.h> //for isalpha() function
 
@@ -14,7 +18,7 @@ int priority(char);
 
 int main()
 {
-	char infix[30],postfix[30];
+		char infix[30],postfix[30];
 		printf("\nEnter INFIX Expression\n");
 		scanf("%s",infix);
 		convert(infix,postfix);
