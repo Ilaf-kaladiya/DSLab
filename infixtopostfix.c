@@ -99,7 +99,7 @@ char pop(stack *s)
 	}
 	else
 	{
-		char data=s->a[s->top--];//set top of stack equal to d and decrement the top 
+		char data=s->a[s->top--];//set top of stack equal to data and decrement the top 
 		return data;
 		
 	}
