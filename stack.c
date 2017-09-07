@@ -8,19 +8,15 @@
 int stack[MAXSIZE], top=-1;
 int isFull(){
 	//return 1 if stack is full else returns -1	
-	if(top==MAXSIZE-1)
-	return 1;
-	else 
-	return -1;
+	return (top==MAXSIZE-1);
+	
 
 }
 
 int isEmpty(){
 	//return 1 if stack is empty else returns-1
-	if(top==-1)
-	return 1;
-	else
-	return -1;
+	return (top==-1);
+	
 
 }
 
@@ -31,9 +27,9 @@ int peek(){
 
 void push(int e){
 	//inserts an element into stack
-	if(isFull()!=1)
+	if(!isFull())
 	{
-		e=stack[++top];//increment the top and set top of stack equal to e
+		stack[++top]=e;//increment the top and set top of stack equal to e
 	printf("\nYour element %d successfully inserted\n",e);//message as element successfully inserted
 	}
 	else 
@@ -48,7 +44,7 @@ void pop()
 {
 	//deletes an element from the top of stack
 	int d;
-	if (isEmpty()!=1)
+	if (!isEmpty())
 	{
 		d=stack[top--];//set top of stack equal to d and decrement the top 
 		printf("\nYour elements %d sucessfully deleted\n",d);//message about successful deletion of element from stack
@@ -61,11 +57,11 @@ void pop()
 }
 int main()
 {
-	int chioce,e;
+	int choice,e;
 	do 
 	{
 		//display menu 1.peek 2.push 3.pop 4.exit
-		printf("\nDisplay Menu \n1.Peek\n 2.Push\n 3.Pop\n 4.Exit\n");
+		printf("\nDisplay Menu \n 1.Peek\n 2.Push\n 3.Pop\n 4.Exit\n");
 		printf("\nEnter your choice");
 		scanf("%d",&choice);   //take  input in choice variable
 		switch(choice){
@@ -86,8 +82,9 @@ int main()
 			default:
 				printf("\nInvalid choice\n");//choice is invalid
 				break;
+		}
 	}while(1);
-		return 0;
+	return 0;
 }
 		
 
