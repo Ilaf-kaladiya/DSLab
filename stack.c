@@ -58,25 +58,17 @@ void pop()
 }
 int main()
 {
-<<<<<<< HEAD
+
 	int ch,e;
 	do 
 	{
 		//display menu 1.peek 2.push 3.pop 4.exit
-		printf("\nDisplay Menu \n1.Peek\n 2.Push\n 3.Pop\n 4.Exit\n");
+		printf("\nDisplay Menu \n 1.Peek\n 2.Push\n 3.Pop\n 4.Exit\n");
 		printf("\nEnter your choice:");
 		scanf("%d",&ch);   //take  input in choice variable
 		switch(ch){
-=======
-	int choice,e;
-	do 
-	{
-		//display menu 1.peek 2.push 3.pop 4.exit
-		printf("\nDisplay Menu \n 1.Peek\n 2.Push\n 3.Pop\n 4.Exit\n");
-		printf("\nEnter your choice");
-		scanf("%d",&choice);   //take  input in choice variable
-		switch(choice){
->>>>>>> c00ffabe237505f677cd93bebfd7c193ce405df0
+
+
 			case 1:
 				e=peek();//call peek function 
 				printf("\n Element at the top of the stack is :- %d\n",e);
@@ -95,15 +87,11 @@ int main()
 			default:
 				printf("\nInvalid choice\n");//choice is invalid
 				break;
-<<<<<<< HEAD
 	}
 	}while (1);
 		return 0;
-=======
-		}
-	}while(1);
-	return 0;
->>>>>>> c00ffabe237505f677cd93bebfd7c193ce405df0
+
+		
 }
 		
 
