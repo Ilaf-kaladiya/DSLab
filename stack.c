@@ -1,5 +1,6 @@
 /*Description: Array implementation of a stack
  * Learner: ILAF KALADIYA
+ * Created on: 
  */
 #include<stdio.h>
 #include<stdlib.h>
@@ -33,7 +34,7 @@ void push(int e){
 	//inserts an element into stack
 	if(isFull()!=1)
 	{
-		e=stack[++top];//increment the top and set top of stack equal to e
+		stack[++top]=e;//increment the top and set top of stack equal to e
 	printf("\nYour element %d successfully inserted\n",e);//message as element successfully inserted
 	}
 	else 
@@ -61,14 +62,14 @@ void pop()
 }
 int main()
 {
-	int chioce,e;
+	int ch,e;
 	do 
 	{
 		//display menu 1.peek 2.push 3.pop 4.exit
 		printf("\nDisplay Menu \n1.Peek\n 2.Push\n 3.Pop\n 4.Exit\n");
-		printf("\nEnter your choice");
-		scanf("%d",&choice);   //take  input in choice variable
-		switch(choice){
+		printf("\nEnter your choice:");
+		scanf("%d",&ch);   //take  input in choice variable
+		switch(ch){
 			case 1:
 				e=peek();//call peek function 
 				printf("\n Element at the top of the stack is :- %d\n",e);
@@ -83,10 +84,12 @@ int main()
 				
 			case 4:
 				exit(0);//call exit (0) function or return 0
+				break;
 			default:
 				printf("\nInvalid choice\n");//choice is invalid
 				break;
-	}while(1);
+	}
+	}while (1);
 		return 0;
 }
 		

@@ -6,7 +6,7 @@ typedef struct linked_list{
 	struct linked_list *next;
 }node;
 
-void print(node *q)
+void print (struct node *q,int no)
 {
 	node *ptr;
 	ptr=q;
@@ -60,7 +60,7 @@ void insafter(node *q,int no)
 	temp=q;
 	ptr=(node*)malloc(sizeof(node));
 	ptr->data=no;
-	print("\n	ENT5ER LOCATION WHERE THE NO. IS TO BE INSERTED");
+	printf("\n	ENTER LOCATION WHERE THE NO. IS TO BE INSERTED");
 	scanf("%d",loc);
 	for(k=1;k<loc;k++)
 	{
@@ -135,13 +135,63 @@ int main()
 	scanf("%d",&start->data);
 	temp=start;
 	
-	for(i=1;i<n;i++)
+		for(i=1;i<n;i++)
 	{
 		ptr=(node*)malloc(sizeof(node));
-		printf("ENTER NODE NUMBER %d",i+1);
-		
+		printf("\nENTER NODE NUMBER %d: ",i+1);
+		scanf("%d",&ptr->data);
+		temp->next=ptr;
+		ptr->prev=temp;
+		temp=ptr;
 	}
+	temp->next=NULL;
+	do{
+		printf("\nENTER YOUR CHOICE\n");
+		printf("\n1-INSERTION\n2-DELETION\n3-TRAVERSE\n4-Exit\n\n");
+		scanf("%d",&j);
+		switch(j)
+		{
+			case 1:
+				printf("\nENTER THE NUMBER TO BE INSERTED: ");
+				scanf("%d",&no);
+				printf("\nENTER 1 TO INSERT AT THE BEGINING\n");
+				printf("ENTER 2 TO INSERT AT THE END\n");
+				printf("ENTER 3 TO INSERT AT A SPECIFIED LOCATION\n");
+				scanf("%d",&c);
+				switch(c)
+				{
+					case 1:
+						insbeg(&start,no);
+						break;
+					case 2:
+						insend(&start,no);
+						break;
+					case 3:
+						insafter(start,no);
+						break;
+					default:
+						printf("\nInvalid Choice.");
+						break;
+				}
+				break;
+			case 2:
+				printf("\nENTER THE NUMBER TO BE DELETED: ");
+				scanf("%d",&no);
+				del(&start,no);
+				break;
+	case 3:
+				traverse(start);
+				break;
+			case 4:
+				exit(0);
+			default:
+				printf("\nInvalid Input.");
+				break;		
+			}
+		}while(1);	
+	return 0;
 }
+
 
 
 
