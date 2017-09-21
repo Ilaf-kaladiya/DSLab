@@ -13,7 +13,7 @@ typedef struct bst{
 
 
 
-void traverse_inorder(node*q){
+void traverse_inorder(node *q){
 	if(q!=NULL){
 		traverse_inorder(q->left);
 		printf("%d\t",q->data);
@@ -25,61 +25,30 @@ void traverse_inorder(node*q){
 
 
 void insert(node **r,int num)
-
 {
-	
 	node *temp,*ptr;
 	temp=*r;
 	
-	
 	if(temp==NULL){
-				ptr=(node*)malloc(sizeof(node));
-				ptr->data=num;
-				ptr->left=NULL;
-				ptr->right=NULL;
-				*r = ptr;
+			ptr=(node*)malloc(sizeof(node));
+			ptr->data=num;
+			ptr->left=NULL;
+			ptr->right=NULL;
+			*r = ptr;
 			}
 	else
 	{
 		if(num > temp->data)
 		{
-			if(temp->right==NULL){
-				ptr=(node*)malloc(sizeof(node));
-				ptr->data=num;
-				ptr->left=NULL;
-				ptr->right=NULL;
-				temp->right=ptr;
-				return;
-				}
+			insert(&temp->right,num);
+		}
 			else{
-				temp=temp->right;
-				insert(&temp,num);
+				insert(&temp->left,num);
 			}
 				
 		}
-		else{
-			if(temp->left==NULL){
-				ptr=(node*)malloc(sizeof(node));
-				ptr->data=num;
-				ptr->left=NULL;
-				ptr->right=NULL;
-				temp->left=ptr;
-				return;
-				}
-			else{
-				temp=temp->left;
-				insert(&temp,num);
-			
-			}
-		}
-		
-		
-		
-		
 	}
 
-
-}
 
 
 int search_bst(node *q, int num){
@@ -99,37 +68,94 @@ int search_bst(node *q, int num){
 			}
 		}
 	}
+return num;
+}
 
+void search_node(node **x,node *root,node **parent,int num,int *f)
+{
+	node *temp;
+	temp=root;
+	if(temp==NULL)
+		return;
+	if(temp->data==num){
+		*f=1;
+		*x=temp;
+		return ;
+		}
+		*parent=temp;
+		while(temp!=NULL)
+		{
+		if(temp->data==num){
+			*f=1;
+			*x=temp;
+			return ;
+		}
+		*parent=temp;
+		if(num>temp->data)
+			temp=temp->right;
+		else
+			temp=temp->left;
+			}
 }
 
 void delete(node **q,int num){
-	node *temp;
+	node *temp,*parent,*xsucc,*x;
+	int f=0;
+	parent=NULL;
+	x=NULL;
+	xsucc=NULL;
 	temp=*q;
-	if(temp==NULL){
-		printf("\nthe given number is not found\n");
-		return;
+	search_node(&x,temp,&parent,&xsucc,num,&f);
+	if(f==0){
+		printf("\n The element %d is not found",num);
+		return ;
 	}
-	else{
-		if(temp->data==num){
-			if(temp->left==NULL&&temp->right==NULL)
-				free(temp);
-	
-			return;
-		}
-		else{
-			if(num > q->data)
-			{
-				delete(q->right,num)
-			}
-			else{
-				delete(q->left,num)
-			}
-			
-		}	
-			
+	//x has no child
+	if(x->left==NULL && x->right== NULL){
+		if(x->data > parent->data)
+			parent->right=NULL;
+		else
+			parent->left=NULL;
+		
 	}
-
+	//x has left child
+	else if(x->left!=NULL && x->right==NULL){
+		if(x->data > parent->data)
+			parent->right=x->left;
+		else
+			parent->left=x->left;
+		
+	}
+			//x has right child
+	else if(x->right!=NULL && x->left==NULL){
+		if(x->data > parent->data)
+			parent->right=x->right;
+		else
+			parent->left=x->right;
+		
+	}
+		//x has both left and right child
+	else if(x->left!=NULL && x->right!=NULL){
+		
+		parent=x;
+		xsucc=x->right;
+		while(xsucc->left!=NULL)
+		{
+			parent=xsucc;
+			xsucc=xsucc->left;
+			}
+		if(xsucc->data > parent->data)
+				parent->right=NULL;
+		else
+				parent->left=NULL;
+		x->data=xsucc->data;
+		x=xsucc;
+			}
+		free (x);
 }
+
+
+
 
 int main()
 {
@@ -147,7 +173,8 @@ int main()
 		printf("\nThe number %d is present in the tree",8);
 	else
 		printf("\nThe number %d is not present in the tree",7);
-	
+	delete(&root,19);
+	traverse_inorder(root);
 	
 	return 0;
 	
