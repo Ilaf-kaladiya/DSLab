@@ -96,3 +96,87 @@ int main()
 		
 
 
+/*
+Display Menu 
+ 1.Peek
+ 2.Push
+ 3.Pop
+ 4.Exit
+
+Enter your choice:2
+
+Enter the element to be inserted :- 
+10
+
+Your element 10 successfully inserted
+
+Display Menu 
+ 1.Peek
+ 2.Push
+ 3.Pop
+ 4.Exit
+
+Enter your choice:2
+
+Enter the element to be inserted :- 
+20
+
+Your element 20 successfully inserted
+
+Display Menu 
+ 1.Peek
+ 2.Push
+ 3.Pop
+ 4.Exit
+
+Enter your choice:2
+
+Enter the element to be inserted :- 
+30
+
+Your element 30 successfully inserted
+
+Display Menu 
+ 1.Peek
+ 2.Push
+ 3.Pop
+ 4.Exit
+
+Enter your choice:1
+
+ Element at the top of the stack is :- 30
+
+Display Menu 
+ 1.Peek
+ 2.Push
+ 3.Pop
+ 4.Exit
+
+Enter your choice:3
+
+Your elements 30 sucessfully deleted
+
+Display Menu 
+ 1.Peek
+ 2.Push
+ 3.Pop
+ 4.Exit
+
+Enter your choice:5
+
+Invalid choice
+
+Display Menu 
+ 1.Peek
+ 2.Push
+ 3.Pop
+ 4.Exit
+
+Enter your choice:4
+
+
+------------------
+(program exited with code: 0)
+Press return to continue
+
+*/
