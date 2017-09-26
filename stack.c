@@ -1,6 +1,6 @@
 /*Description: Array implementation of a stack
  * Learner: ILAF KALADIYA
- * Created on: 
+ * Created on: 13th JULY 2017
  */
 #include<stdio.h>
 #include<stdlib.h>
