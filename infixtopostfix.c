@@ -105,3 +105,16 @@ char pop(stack *s)
 		
 	}
 }
+/*
+Enter INFIX Expression
+a+(b*c-d/f)*e
+
+
+Postfix Expression
+abc*df/-e*+
+
+------------------
+(program exited with code: 0)
+Press return to continue
+
+*/
