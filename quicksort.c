@@ -54,10 +54,20 @@ int main()
 	{
 		scanf("%d",&a[i]);
 	}
-	
-	
+	printf("Entered array is:\n");
+
+	for(i=0;i<n;i++)
+	{
+		
+		printf("%d\t",a[i]);
+	}
+	printf("\n\n\n");
 	Quick_sort(a,0,n-1);
+	printf("Sorted array is:\n");
+
+	
 	for(i=0;i<n;i++){
+		
 		printf("%d\t",a[i]);
 		}
 	}	
