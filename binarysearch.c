@@ -1,3 +1,9 @@
+/* Description : Implementation of Binary Search 
+ *Learner : IALF-KALADIYA
+ *Created on :  14th september 2017 
+ */
+
+
 #include<stdio.h>
 
 #define MAX 100

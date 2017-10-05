@@ -1,3 +1,11 @@
+/* Description : Implementation of Quick Sort
+ *Learner : IALF-KALADIYA
+ *Created on :  14th september 2017 
+ */
+
+
+
+
 #include<stdio.h>
 #define MAX 100
 
