@@ -44,11 +44,11 @@ int main()
 	}
 for(i=0;i<n;i++)
 	{
-		printf("%d\n",a[i]);
+		printf("%d\t",a[i]);
 	}
 	
 	}
-	printf("ENTER ELEMENT TO BE SEARCHED\n");
+	printf("\nENTER ELEMENT TO BE SEARCHED\n");
 	scanf("%d",&x);
 	c = binary_search(a,n,x);
 	if(c==-1){
@@ -60,3 +60,44 @@ for(i=0;i<n;i++)
 	return 0;
 	
 }
+
+/*Enter the number of elements for array.
+6
+Enter elements of array
+16
+25
+36
+49
+72
+85
+16	25	36	49	72	85	
+ENTER ELEMENT TO BE SEARCHED
+49
+Element found at position : 3
+ 
+ ------------------
+(program exited with code: 0)
+Press return to continue
+
+Enter the number of elements for array.
+6
+Enter elements of array
+12
+26
+34
+49
+57
+89
+12	26	34	49	57	89	
+ENTER ELEMENT TO BE SEARCHED
+81
+ELEMENT CANNOT BE FOUND
+
+
+------------------
+(program exited with code: 0)
+Press return to continue
+ 
+
+
+*/
