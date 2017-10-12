@@ -94,3 +94,153 @@ int main()
 		}
 	}while(1);	
 }
+
+
+/*Enter the Number to be stored: 15
+
+Elements of array
+-1	-1	-1	-1	-1	15	-1	-1	-1	-1	-1	
+ Enter the Number to be stored: 13
+
+Elements of array
+-1	-1	-1	13	-1	15	-1	-1	-1	-1	-1	
+ Enter the Number to be stored: 12
+
+Elements of array
+-1	-1	12	13	-1	15	-1	-1	-1	-1	-1	
+ Enter the Number to be stored: 4
+
+Elements of array
+-1	-1	12	13	4	15	-1	-1	-1	-1	-1	
+ Enter the Number to be stored: 6
+
+Elements of array
+-1	-1	12	13	4	15	6	-1	-1	-1	-1	
+ Enter the Number to be stored: 1
+
+Elements of array
+-1	1	12	13	4	15	6	-1	-1	-1	-1	
+ Enter the Number to be stored: 69
+
+Elements of array
+-1	1	12	13	4	15	6	-1	-1	69	-1	
+ Enter the Number to be stored: 36
+
+Collision occured at 6
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+1
+
+Elements of array
+-1	1	12	13	4	15	6	36	-1	69	-1	
+ Enter the Number to be stored: 48
+
+Elements of array
+-1	1	12	13	4	15	6	36	48	69	-1	
+ Enter the Number to be stored: 52
+
+Collision occured at 2
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+2
+
+Collision occured at 3
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+2
+
+Collision occured at 7
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+2
+
+Collision occured at 6
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+2
+
+Collision occured at 2
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+2
+
+Collision occured at 7
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+2
+
+Collision occured at 3
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+2
+
+Collision occured at 2
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+3
+
+Collision occured at 6
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+3
+
+Collision occured at 9
+
+ Pease enter your choice for resolution
+
+1.LINEAR PROBING
+2.QUADRATIC PROBING
+3.DOUBLE HASHING
+1
+
+Elements of array
+52	1	12	13	4	15	6	36	48	69	-1	
+ Array is FULL
+or
+Collision Resolution not successfull
+
+------------------
+(program exited with code: 0)
+Press return to continue
+
+*/
