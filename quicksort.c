@@ -81,3 +81,40 @@ int main()
 	}	
 	return 0;
 }
+
+/*
+Enter the number of elements for array.
+7 
+Enter elements of array
+12
+96
+74
+1
+3
+56
+44
+Entered array is:
+12	96	74	1	3	56	44	
+
+
+Sorted array is:
+1	3	12	44	56	74	96	
+
+------------------
+(program exited with code: 0)
+Press return to continue
+
+
+
+Enter the number of elements for array.
+101
+SORRY.
+Number of elements should be less than 100
+
+
+------------------
+(program exited with code: 0)
+Press return to continue
+
+
+*/
