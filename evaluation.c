@@ -1,111 +1,105 @@
-/*Description:Evaluation of postfix expression
- *Learner:ILAF KALADIYA
- *created on: 27th JULY 2017
-*/
+/*Description: Evaluation of postfix expression
+ * Learner: ILAF KALADIYA
+ * created on:  27th JULY 2017
+ */
 
+#include<stdio.h>
 
-#include <stdio.h>
-#include <ctype.h>
+#include<ctype.h>  //for isdigit() function
 
-
-typedef struct evaluation
+typedef struct conversion
 {
-	char a[30];
-	int top;
-} stack;
+  char a[30];
+  int top;
+}stack;
 
-void push(stack *ps,char n);
-
-int pop (stack *ps);
-
-int evaluate(char postfix[]);
-
-int operation (int num1,int num2,char opr);
-
-int main()
-{
-	char postfix[30];
-	
-	printf("\nEnter Postfix Expression\n");
-	scanf("%s",postfix);
-	printf("\n\nEvaluation of Postfix Expression=%d\n",evaluate(postfix));
-	return 0;
-}
-
-
-int operation (int n1,int n2,char opr)
-{
-	
-	
-	switch(opr)
+ void push(stack *s,char opr)
 	{
-		case  '+':
-		return n1+n2;
-		break;
-		case '-':
-		return n1-n2;
-		break;
-		case '*':
-		return n1*n2;
-		break;
-		case '/':
-		return n1/n2;
-		break;
-	}
-	
-}
-
-int evaluate(char postfix[30])
-{
-	int opr;
-	int n1,n2,result,i;
-	stack s;
-	s.top=-1;
-	while(postfix[i]!='\0')
-	{
-		opr=postfix[i];
-		if(isdigit(opr))
-		push(&s,opr-'0');
-		else
+		if(s->top>29)
 		{
-		n1=pop(&s);
-		n2=pop(&s);
-	    result=operation(n1,n2,opr);
-	    push(&s,result);
-	    }
-	    i++;
+			printf("stack is full");
+			return ;
+		}
+			else
+		{
+		s->top++;
+		s->a[s->top]=opr;
 	}
-		return pop(&s);
 	}
-
-
-void push(stack *ps,char n)
-{
-	
-	if(ps->top>29){
-		printf("\nStack is full.\n");
-		return;
-	}
-	ps->top++;
-	ps->a[ps->top]=n;
-}
-
-int pop(stack *ps)
-{
-	if(ps->top==-1)
+  char pop(stack *s)
 	{
-		printf("\nStack is empty\n");
+		if(s->top==-1)
+		{
+		printf("stack is empty\n");
 		return 0;
-	}
-	else
-	{
-		char data=ps->a[ps->top--];
+    }
+    else
+    {
+		char data=s->a[s->top--];
 		return data;
 	}
 }
 
-	
 
 
-		
+   int operation(int num1,int num2,char opr)
+ {
+	 switch(opr)
+	 {
+		 case '+':
+		   return num1+num2;
+		 case '-':
+		   return num1-num2;
+		 case '*':
+		   return num1*num2;
+		 case '/':
+		   return num1/num2;
+	   }
+	}   
+		 
+	int evaluate (char post[])
+ {
+	 int result,n1,n2,i=0;
+	 char opr;
+	 stack s;
+	 s.top=-1;
+	 while(post[i]!='\0')
+	 {
+		 opr=post[i];
+		 if(isdigit(opr))
+		 push (&s,opr-'0');
+		 else
+		 {
+		 n1=pop(&s);
+		 n2=pop(&s);
+	     result = operation(n1,n2,opr);
+         push(&s,result);
+	     }
+         i++;
+	 }
+	 return pop(&s);
+ }
+ 
+ 
+int main()
 
+{
+    char postfix[30];
+    printf("\n ENTER POSTFIX EXPRESSION\n");
+    scanf("%s",postfix);
+    evaluate (postfix);
+    printf("\n\n EVALUATION OF POSTFIX EXPRESSION=%d",evaluate(postfix));
+    return 0;
+}
+
+
+ /*ENTER POSTFIX EXPRESSION
+12345+*-/
+
+
+ EVALUATION OF POSTFIX EXPRESSION=25
+
+------------------
+(program exited with code: 0)
+Press return to continue
+*/
