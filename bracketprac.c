@@ -1,6 +1,11 @@
+/*Description: Check continuity of different types of paranthesis using stack
+ * Learner: ILAF KALADIYA
+ * created on: 3rd  2017
+ */
+
 #include <stdio.h>
 #include <ctype.h>
-#deefine MAX 100
+#define MAX 100
 
 typedef struct stack
 {
@@ -93,38 +98,64 @@ void checkcontinuity (char exp[MAX])
 		{
 			if(s.top==-1)
 			{
-				printf("Expression is INVALID\n");
+				printf("Expression is VALID\n");
 				return;	
 			}
-				else
-				{
-			left=pop(&s);
-			
-			if(isMatchingpair(left,e))
-			continue;
 			else
-			
 			{
-				printf("\n INVALID Expression\n");
-				return;
+				left=pop(&s);
+			
+				if(isMatchingpair(left,e))
+				continue;
+				else
+			
+				{
+					printf("\n INVALID Expression\n");
+					return;
+				}
 			}
 		}
-		}
-		}
+	}
 			
 			
 			if(s.top==-1)
 			{
-				printf("\nExpression is INVALID\n");
+				printf("\nExpression is VALID\n");
 				return;
 			}
 				else
 			{
-				printf("\nVALID Expression\n");
+				printf("\nINVALID Expression\n");
 				
 			}
 }
 	
 
 
+		
+/*
+Enter an expression containing only BRACKETS
+{[()[]]} 
+
+Expression is VALID
+
+
+------------------
+(program exited with code: 0)
+Press return to continue
+
+*/
+
+/*
+Enter an expression containing only BRACKETS
+[[]}()}
+
+ INVALID Expression
+
+
+------------------
+(program exited with code: 0)
+Press return to continue
+  
+*/
 		
